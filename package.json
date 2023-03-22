@@ -7,6 +7,7 @@
   "author": "tuna2134 <tuna2134@noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "node-fetch": "^3.3.1",
     "typescript": "^4.9.5"
   }
 }

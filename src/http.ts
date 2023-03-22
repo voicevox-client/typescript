@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import { audioQuery, createAudioQueryOptions } from "./types/audioquery";
+import { synthesisParams } from "./types/synthesis";
 
 type fetchOptions = {
     method: string;
@@ -28,7 +29,11 @@ export class RestAPI {
             fetch_options['body'] = JSON.stringify(options.body);
         }
         let response = await fetch(url, fetch_options)
-        return await response.json();
+        if (response.headers.get("Content-Type") === "application/json") {
+            return await response.json();
+        } else {
+            return await response.arrayBuffer();
+        }
     }
 
     async createAudioQuery(text: string, speaker_id: number, options: {
@@ -42,6 +47,15 @@ export class RestAPI {
             params['core_version'] = options.core_version;
         }
         return await this.request('POST', '/audio_query', {
+            params: params,
+        })
+    }
+
+    async synthesis(
+        audioQuery: audioQuery, params: synthesisParams
+    ): Promise<ArrayBuffer> {
+        return await this.request("POST", "/synthesis", {
+            body: audioQuery,
             params: params,
         })
     }

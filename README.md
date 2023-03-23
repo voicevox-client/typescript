@@ -1,1 +1,1 @@
-# typescript
+# voicevox-client

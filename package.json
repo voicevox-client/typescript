@@ -1,12 +1,12 @@
 {
   "name": "voicevox-client",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Voicevox wrapper for ts/js",
   "main": "dist/index.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },

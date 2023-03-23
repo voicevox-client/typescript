@@ -1,8 +1,14 @@
 {
   "name": "voicevox-client",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Voicevox wrapper for ts/js",
   "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "repository": "git@github.com:voicevox-client/typescript.git",
   "author": "tuna2134 <tuna2134@noreply.github.com>",
   "license": "MIT",

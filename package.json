@@ -1,25 +1,26 @@
 {
   "name": "voicevox-client",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Voicevox wrapper for ts/js",
   "main": "dist/index.js",
   "repository": "git@github.com:voicevox-client/typescript.git",
   "author": "tuna2134 <tuna2134@noreply.github.com>",
   "license": "MIT",
-  "include": [
-    "dist/**/*"
-  ],
   "dependencies": {
     "node-fetch": "2",
     "typescript": "^4.9.5"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.6.2",
+    "prettier": "^2.8.6",
     "ts-node": "^10.9.1",
     "voicevox-client": "file:./"
   },
   "scripts": {
     "test": "ts-node ./tests/basic.ts",
     "build": "tsc"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

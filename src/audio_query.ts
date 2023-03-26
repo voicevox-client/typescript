@@ -7,7 +7,7 @@ export class audioQuery {
   private audioQuery: audioQueryT;
   public speedScale: number;
   public pitchScale: number;
-  public accentPhrases: accentPhrase[]
+  public accentPhrases: accentPhrase[];
   public intonationScale: number;
   public volumeScale: number;
   public prePhonemeLength: number;

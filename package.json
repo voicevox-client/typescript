@@ -11,7 +11,7 @@
     "./package.json": "./package.json"
   },
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:voicevox-client/typescript.git",
+  "repository": "https://github.com/voicevox-client/typescript",
   "author": "tuna2134 <tuna2134@noreply.github.com>",
   "license": "MIT",
   "dependencies": {},
@@ -24,7 +24,9 @@
   },
   "scripts": {
     "test": "ts-node ./tests/basic.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write src/*.ts src/**/*.ts",
+    "lint": "prettier --check src/*.ts src/**/*.ts"
   },
   "files": [
     "dist"

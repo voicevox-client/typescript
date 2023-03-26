@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import { audioQuery, createAudioQueryOptions } from "./types/audioquery";
 import { synthesisParams } from "./types/synthesis";
 

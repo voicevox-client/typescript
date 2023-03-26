@@ -1,4 +1,4 @@
-import { RestAPI } from "./http";
+import { RestAPI } from "./rest";
 import { audioQuery as audioQueryT } from "./types/audioquery";
 import { synthesisParams } from "./types/synthesis";
 

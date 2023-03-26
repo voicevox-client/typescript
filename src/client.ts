@@ -1,4 +1,4 @@
-import { RestAPI } from "./http";
+import { RestAPI } from "./rest";
 import { audioQuery } from "./audio_query";
 
 export class Client {

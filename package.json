@@ -14,9 +14,7 @@
   "repository": "git@github.com:voicevox-client/typescript.git",
   "author": "tuna2134 <tuna2134@noreply.github.com>",
   "license": "MIT",
-  "dependencies": {
-    "node-fetch": "2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node-fetch": "^2.6.2",
     "prettier": "^2.8.6",

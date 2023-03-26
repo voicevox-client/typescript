@@ -2,7 +2,7 @@ import { RestAPI } from "./rest";
 import { audioQuery } from "./audio_query";
 
 export class Client {
-  rest: RestAPI;
+  readonly rest: RestAPI;
 
   constructor(engine_url: string) {
     this.rest = new RestAPI(engine_url);

@@ -11,7 +11,7 @@ export interface audioQuery {
   kana: string;
 }
 
-interface accentPhrase {
+export interface accentPhrase {
   moras: mora[];
   accent: number;
   pause_mora: mora;

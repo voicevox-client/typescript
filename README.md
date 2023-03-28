@@ -12,7 +12,7 @@ $ yarn add voicevox-client
 ```ts
 import Client from "voicevox-client";
 
-const client = new Client("http://localhost:50021");
+const client = new Client("http://127.0.0.1:50021");
 
 async function main() {
   const audioquery = await client.createAudioQuery("こんにちは", 1);

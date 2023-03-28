@@ -24,6 +24,8 @@ jobs:
           docker run -d --rm -p '127.0.0.1:50021:50021' voicevox/voicevox_engine:cpu-ubuntu20.04-latest
           sleep 15
       - name: Build library
-        run: yarn build
+        run: |
+          yarn build
+          yarn install --frozen-lockfile --save-dev
       - name: Run test
         run: yarn test

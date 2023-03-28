@@ -16,5 +16,5 @@ const client = new Client("http://localhost:50021");
 
 async function main() {
   const audioquery = await client.createAudioQuery("こんにちは", 1);
-  const audioquery.synthesis(1)
+  const audioquery.synthesis(1);
 }

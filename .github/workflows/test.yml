@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Install depend
-        run: yarn install --save-dev
+        run: yarn install --frozen-lockfile --save-dev
       - name: Run voicevox-engine
         run: |
           docker pull voicevox/voicevox_engine:cpu-ubuntu20.04-latest

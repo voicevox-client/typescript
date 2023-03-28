@@ -18,3 +18,4 @@ async function main() {
   const audioquery = await client.createAudioQuery("こんにちは", 1);
   const audioquery.synthesis(1);
 }
+```

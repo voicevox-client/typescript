@@ -2,6 +2,7 @@ import { RestAPI } from "./rest";
 import { audioQuery as audioQueryT, accentPhrase } from "./types/audioquery";
 import { synthesisParams } from "./types/synthesis";
 
+// audio query
 export class audioQuery {
   private rest: RestAPI;
   private audioQuery: audioQueryT;
@@ -31,6 +32,15 @@ export class audioQuery {
     this.kana = audioQuery.kana;
   }
 
+  // Synthesis
+  /**
+   *
+   * @param speaker Speaker ID
+   * @param options options
+   * @param options.interrogative_upspeak Enable upspeak
+   * @param options.core_version Core version
+   * @returns voice data
+   */
   async synthesis(
     speaker: number,
     options: {

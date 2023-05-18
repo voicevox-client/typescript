@@ -43,7 +43,7 @@ export class audioQuery {
    */
   async synthesis(
     speaker: number,
-    options: {
+    options?: {
       interrogative_upspeak?: boolean;
       core_version?: string;
     }

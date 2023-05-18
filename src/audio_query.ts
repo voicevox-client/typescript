@@ -48,6 +48,7 @@ export class audioQuery {
       core_version?: string;
     }
   ): Promise<ArrayBuffer> {
+    options ??= {};
     let params: synthesisParams = {
       speaker: speaker,
     };

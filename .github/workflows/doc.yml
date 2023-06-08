@@ -19,7 +19,7 @@ jobs:
       - name: Install depend
         run: yarn install --frozen-lockfile --save-dev
       - name: Build docs
-        run: npx typedoc src/*.ts
+        run: npx typedoc src/*.ts src/**/*.ts
       - uses: actions/upload-pages-artifact@v1
         with:
           path: docs

@@ -16,6 +16,6 @@ const client = new Client("http://127.0.0.1:50021");
 
 async function main() {
   const audioquery = await client.createAudioQuery("こんにちは", 1);
-  const audioquery.synthesis(1);
+  await audioquery.synthesis(1);
 }
 ```

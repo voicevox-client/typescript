@@ -1,0 +1,38 @@
+name: Build document
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    
+jobs:
+  build:
+    name: Build document for voicevox-client
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install depend
+        run: yarn install --frozen-lockfile --save-dev
+      - name: Build docs
+        run: npx typedoc src/*.ts
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: build
+  publish:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1

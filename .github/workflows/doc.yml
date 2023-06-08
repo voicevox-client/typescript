@@ -22,7 +22,7 @@ jobs:
         run: npx typedoc src/*.ts
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: build
+          path: docs
   publish:
     needs: build
     permissions:
@@ -33,6 +33,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

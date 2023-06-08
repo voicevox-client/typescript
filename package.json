@@ -20,7 +20,7 @@
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.8",
     "typescript": "^5.0.2",
-    "@types/node": "^18.15.10",
+    "@types/node": "^20.2.5",
     "voicevox-client": "file:./"
   },
   "scripts": {

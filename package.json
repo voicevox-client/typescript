@@ -1,6 +1,6 @@
 {
   "name": "voicevox-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Voicevox wrapper for ts/js",
   "main": "dist/index.js",
   "exports": {
@@ -18,9 +18,9 @@
   "devDependencies": {
     "prettier": "^2.8.6",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.23.28",
+    "typedoc": "^0.24.8",
     "typescript": "^5.0.2",
-    "@types/node": "^18.15.10",
+    "@types/node": "^20.2.5",
     "voicevox-client": "file:./"
   },
   "scripts": {

@@ -43,11 +43,12 @@ export class audioQuery {
    */
   async synthesis(
     speaker: number,
-    options: {
+    options?: {
       interrogative_upspeak?: boolean;
       core_version?: string;
     }
   ): Promise<ArrayBuffer> {
+    options ??= {};
     let params: synthesisParams = {
       speaker: speaker,
     };

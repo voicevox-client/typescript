@@ -41,14 +41,14 @@ export class RestAPI {
 
   async createAudioQuery(
     text: string,
-    speaker_id: number,
+    speaker: number,
     options: {
       core_version?: string;
     }
   ): Promise<audioQuery> {
     let params: createAudioQueryOptions = {
       text: text,
-      speaker_id: speaker_id,
+      speaker: speaker,
     };
     if (options.core_version) {
       params["core_version"] = options.core_version;

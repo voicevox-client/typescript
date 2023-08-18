@@ -29,6 +29,6 @@ interface mora {
 
 export interface createAudioQueryOptions {
   text: string;
-  speaker_id: number;
+  speaker: number;
   core_version?: string;
 }

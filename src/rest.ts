@@ -3,6 +3,7 @@ import { synthesisParams } from "./types/synthesis";
 
 type fetchOptions = {
   method: string;
+  headers?: Record<string, string>;
   body?: any;
 };
 
@@ -29,6 +30,7 @@ export class RestAPI {
       method: method,
     };
     if (options.body) {
+      fetch_options["headers"] = { "Content-Type": "application/json" };
       fetch_options["body"] = JSON.stringify(options.body);
     }
     let response = await fetch(url, fetch_options);

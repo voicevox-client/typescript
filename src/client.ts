@@ -44,4 +44,27 @@ export class Client {
     let audioquery = await this.rest.createAudioQuery(text, speaker, options);
     return new audioQuery(this.rest, audioquery);
   }
+
+  // Create audio query from preset
+  /**
+   * @param text - Japanese text
+   * @param preset_id - Preset ID
+   * @param options - Options
+   * @param options.core_version - Core version
+   */
+  async createAudioQueryFromPreset(
+    text: string,
+    preset_id: number,
+    options?: {
+      core_version?: string;
+    }
+  ): Promise<audioQuery> {
+    options ??= {};
+    let audioquery = await this.rest.createAudioQueryFromPreset(
+      text,
+      preset_id,
+      options
+    );
+    return new audioQuery(this.rest, audioquery);
+  }
 }

@@ -1,4 +1,8 @@
-import { audioQuery, createAudioQueryOptions } from "./types/audioquery";
+import {
+  audioQuery,
+  createAudioQueryOptions,
+  createAudioQueryFromPresetOptions,
+} from "./types/audioquery";
 import { synthesisParams } from "./types/synthesis";
 
 type fetchOptions = {
@@ -56,6 +60,25 @@ export class RestAPI {
       params["core_version"] = options.core_version;
     }
     return await this.request("POST", "/audio_query", {
+      params: params,
+    });
+  }
+
+  async createAudioQueryFromPreset(
+    text: string,
+    preset_id: number,
+    options: {
+      core_version?: string;
+    }
+  ): Promise<audioQuery> {
+    let params: createAudioQueryFromPresetOptions = {
+      text: text,
+      preset_id: preset_id,
+    };
+    if (options.core_version) {
+      params["core_version"] = options.core_version;
+    }
+    return await this.request("POST", "/audio_query_from_preset", {
       params: params,
     });
   }

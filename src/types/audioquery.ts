@@ -32,3 +32,9 @@ export interface createAudioQueryOptions {
   speaker: number;
   core_version?: string;
 }
+
+export interface createAudioQueryFromPresetOptions {
+  text: string;
+  preset_id: number;
+  core_version?: string;
+}

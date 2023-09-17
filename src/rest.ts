@@ -3,6 +3,7 @@ import {
   createAudioQueryOptions,
   createAudioQueryFromPresetOptions,
 } from "./types/audioquery";
+import { preset } from "./types/preset";
 import { synthesisParams } from "./types/synthesis";
 
 type fetchOptions = {
@@ -21,19 +22,19 @@ export class RestAPI {
   async request(
     method: string,
     path: string,
-    options: {
+    options?: {
       body?: any;
       params?: any;
     }
   ): Promise<any> {
     let url = this.engine_url + path;
-    if (options.params) {
+    if (options?.params) {
       url += "?" + new URLSearchParams(options.params).toString();
     }
     var fetch_options: fetchOptions = {
       method: method,
     };
-    if (options.body) {
+    if (options?.body) {
       fetch_options["headers"] = { "Content-Type": "application/json" };
       fetch_options["body"] = JSON.stringify(options.body);
     }
@@ -91,5 +92,9 @@ export class RestAPI {
       body: audioQuery,
       params: params,
     });
+  }
+
+  async getPresets(): Promise<preset[]> {
+    return await this.request("GET", "/presets");
   }
 }

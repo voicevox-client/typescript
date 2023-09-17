@@ -5,7 +5,6 @@ import { synthesisParams } from "./types/synthesis";
 // audio query
 export class audioQuery {
   private rest: RestAPI;
-  private audioQuery: audioQueryT;
   public speedScale: number;
   public pitchScale: number;
   public accentPhrases: accentPhrase[];
@@ -19,7 +18,6 @@ export class audioQuery {
 
   constructor(rest: RestAPI, audioQuery: audioQueryT) {
     this.rest = rest;
-    this.audioQuery = audioQuery;
     this.accentPhrases = audioQuery.accent_phrases;
     this.speedScale = audioQuery.speedScale;
     this.pitchScale = audioQuery.pitchScale;
@@ -58,6 +56,9 @@ export class audioQuery {
     if (options.core_version) {
       params["core_version"] = options.core_version;
     }
-    return await this.rest.synthesis(this.audioQuery, params);
+    return await this.rest.synthesis(
+      { ...this, accent_phrases: this.accentPhrases },
+      params
+    );
   }
 }

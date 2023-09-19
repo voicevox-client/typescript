@@ -1,4 +1,4 @@
-export interface preset {
+export interface Preset {
   id: number;
   name: string;
   speaker_uuid: string;
@@ -9,4 +9,8 @@ export interface preset {
   volumeScale: number;
   prePhonemeLength: number;
   postPhonemeLength: number;
+}
+
+export interface DeletePresetOptions {
+  id: number;
 }

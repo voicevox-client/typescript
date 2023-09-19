@@ -1,6 +1,6 @@
 import { RestAPI } from "./rest";
 import { audioQuery } from "./audio_query";
-import { preset } from "./preset";
+import { Preset } from "./preset";
 
 // voicevox client
 /**
@@ -70,8 +70,37 @@ export class Client {
   }
 
   // Fetch presets
-  async fetchPresets(): Promise<preset[]> {
+  /**
+   * @returns Presets
+   */
+  async fetchPresets(): Promise<Preset[]> {
     let presets = await this.rest.getPresets();
-    return presets.map((x) => new preset(x));
+    return presets.map((x) => new Preset(x));
+  }
+
+  // Add preset
+  /**
+   * @param preset - Preset
+   * @returns Preset ID
+   */
+  async addPreset(preset: Preset): Promise<number> {
+    return await this.rest.addPreset({ ...preset });
+  }
+
+  // Update preset
+  /**
+   * @param preset - Preset
+   * @returns Preset ID
+   */
+  async updatePreset(preset: Preset): Promise<number> {
+    return await this.rest.updatePreset({ ...preset });
+  }
+
+  // Delete preset
+  /**
+   * @param id - Preset ID
+   */
+  async deletePreset(id: number): Promise<void> {
+    return await this.rest.deletePreset(id);
   }
 }

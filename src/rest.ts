@@ -3,7 +3,7 @@ import {
   createAudioQueryOptions,
   createAudioQueryFromPresetOptions,
 } from "./types/audioquery";
-import { preset } from "./types/preset";
+import { Preset } from "./types/preset";
 import { synthesisParams } from "./types/synthesis";
 
 type fetchOptions = {
@@ -94,7 +94,7 @@ export class RestAPI {
     });
   }
 
-  async getPresets(): Promise<preset[]> {
+  async getPresets(): Promise<Preset[]> {
     return await this.request("GET", "/presets");
   }
 }

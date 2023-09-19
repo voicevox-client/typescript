@@ -1,7 +1,7 @@
-import { preset as presetT } from "./types/preset";
+import { Preset as PresetT } from "./types/preset";
 
 // preset
-export class preset {
+export class Preset {
   public id: number;
   public name: string;
   public speaker_uuid: string;
@@ -13,7 +13,7 @@ export class preset {
   public prePhonemeLength: number;
   public postPhonemeLength: number;
 
-  constructor(preset: presetT) {
+  constructor(preset: PresetT) {
     this.id = preset.id;
     this.name = preset.name;
     this.speaker_uuid = preset.speaker_uuid;

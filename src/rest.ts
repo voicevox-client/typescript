@@ -3,7 +3,7 @@ import {
   createAudioQueryOptions,
   createAudioQueryFromPresetOptions,
 } from "./types/audioquery";
-import { Preset } from "./types/preset";
+import { Preset, DeletePresetOptions } from "./types/preset";
 import { synthesisParams } from "./types/synthesis";
 
 type fetchOptions = {
@@ -96,5 +96,26 @@ export class RestAPI {
 
   async getPresets(): Promise<Preset[]> {
     return await this.request("GET", "/presets");
+  }
+
+  async addPreset(preset: Preset): Promise<number> {
+    return await this.request("POST", "/add_preset", {
+      body: preset,
+    });
+  }
+
+  async updatePreset(preset: Preset): Promise<number> {
+    return await this.request("POST", "/update_preset", {
+      body: preset,
+    });
+  }
+
+  async deletePreset(id: number): Promise<void> {
+    let params: DeletePresetOptions = {
+      id: id,
+    };
+    return await this.request("POST", "/delete_preset", {
+      params: params,
+    });
   }
 }

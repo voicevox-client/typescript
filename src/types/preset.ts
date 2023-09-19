@@ -10,3 +10,7 @@ export interface Preset {
   prePhonemeLength: number;
   postPhonemeLength: number;
 }
+
+export interface DeletePresetOptions {
+  id: number;
+}

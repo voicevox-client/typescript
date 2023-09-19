@@ -70,8 +70,37 @@ export class Client {
   }
 
   // Fetch presets
+  /**
+   * @returns Presets
+   */
   async fetchPresets(): Promise<Preset[]> {
     let presets = await this.rest.getPresets();
     return presets.map((x) => new Preset(x));
+  }
+
+  // Add preset
+  /**
+   * @param preset - Preset
+   * @returns Preset ID
+   */
+  async addPreset(preset: Preset): Promise<number> {
+    return await this.rest.addPreset({ ...preset });
+  }
+
+  // Update preset
+  /**
+   * @param preset - Preset
+   * @returns Preset ID
+   */
+  async updatePreset(preset: Preset): Promise<number> {
+    return await this.rest.updatePreset({ ...preset });
+  }
+
+  // Delete preset
+  /**
+   * @param id - Preset ID
+   */
+  async deletePreset(id: number): Promise<void> {
+    return await this.rest.deletePreset(id);
   }
 }

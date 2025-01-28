@@ -4,6 +4,7 @@ import {
   createAudioQueryFromPresetOptions,
 } from "./types/audioquery";
 import { Preset, DeletePresetOptions } from "./types/preset";
+import { Speaker } from "./types/speaker";
 import { synthesisParams } from "./types/synthesis";
 
 type fetchOptions = {
@@ -117,5 +118,9 @@ export class RestAPI {
     return await this.request("POST", "/delete_preset", {
       params: params,
     });
+  }
+
+  async getSpeakers(): Promise<Speaker[]> {
+    return await this.request("GET", "/speakers");
   }
 }
